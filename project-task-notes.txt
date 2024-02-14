@@ -1,0 +1,49 @@
+This txt file contains my notes on the project description, found at https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator
+
+-> The syntax of the submission files:
+		-> They want the ipynb file to pass the unit tests
+		-> And then for you to provide them a link to that file 
+
+-> The project:
+	-> Linear regression health costs calculator 
+	-> The project is in a Jupyter environment -> the template code is in Google Colaboratory 
+	-> Predicting US healthcare costs using a regression algorithm 
+	-> The dataset contains information about peoples' demographics and what their healthcare costs are
+	-> We are using this to create a model:
+		-> The model will take information about someone's demographics and output predictions about what their healthcare costs are going to be 
+
+-> The process this uses: 
+	-> Importing the Python libraries <- the first cell 
+	-> Importing the project data <- the second cell 
+		-> This is done with an HTTP request 
+	-> Then processing the data:
+		-> Converting categorical data (with strings) into numbers 
+		-> Splitting the data into train and test datasets: <- so we can train the model on it 
+			-> We are being given an entire dataset -> this is going to be used to create the model 
+			-> Using 80% of that dataset to train the model with <- train_dataset
+				-> We are creating a model and training it with this dataset 
+			-> 20% of it to test the model with <- test_dataset
+				-> We are running this data on the trained model, to see how well it generalises 
+			-> When we process the data, we are segmenting the dataset into those factions 
+
+		-> Popping off the "expenses" column:
+			-> We are predicting what the healthcare expenses of the input customers are going to be 
+			-> Removing that column from the test and training datasets 
+			-> We are taking the dataset, splitting it into 20% test and 80% training, and then popping off the data we want to make predictions on (the expenses column)
+			-> Then using that expenses column when training the model 
+			-> The entire model is using linear regression
+
+	-> Using the model to make predictions and pass unit tests: 
+		-> model.evaluate must return a Mean Absolute Error of under 3500
+		-> This means that the model is predicting healthcare costs to within $3,500 
+		-> This is for a US healthcare system 
+		-> The final cell graphs these results based off of predictions made on test_dataset 
+
+-> Summary:
+	-> The US healthcare system costs money (it's not free)
+	-> Depending on the demographic of person, the health care costs can be more or less
+	-> We are taking a dataset which stores the demographic of the person and what their healthcare costs are 
+	-> We are training a model on that dataset, which predicts their healthcare costs depending on their demographics 
+	-> So we are importing that dataset, popping off their healthcare costs from it, dividing it into training and test sets and then using a linear regression model to train it 
+	-> Then we are using it to make predictions based off of unseen data, by running unit tests on it
+	-> This entire thing is done in an ipynb file, whose link we submit to the same URL as the page which these notes are made on 
